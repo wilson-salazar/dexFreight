@@ -31,7 +31,7 @@ public class SimpleLogin {
 	public void setUp() throws InterruptedException, FileNotFoundException, IOException {
 		System.setProperty(KEYPATH, PATH);
 		Properties myProperties = new Properties();
-		myProperties.load(new FileInputStream("C:\\Users\\Wilson\\eclipse-workspace\\DexFreight\\src\\test\\java\\properties\\parameters.properties"));
+		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
 		time = util.getTime();
 		
 		url = myProperties.getProperty("url");

@@ -49,7 +49,7 @@ public class CreateShipmentFtl {
 	public void setUp() throws InterruptedException, FileNotFoundException, IOException {
 		System.setProperty(KEYPATH, PATH);
 		Properties myProperties = new Properties();
-		myProperties.load(new FileInputStream("C:\\Users\\Wilson\\eclipse-workspace\\DexFreight\\src\\test\\java\\properties\\parameters.properties"));
+		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
 		time = util.getTime();
 		
 		// variables de usuario
@@ -95,7 +95,7 @@ public class CreateShipmentFtl {
 		inputBoxPass.clear();
 		inputBoxPass.sendKeys(password);
 		buttonSignIn.click();
-		Thread.sleep(2000);
+		Thread.sleep(time);
 
 		// Create Shipment
 		WebElement shipmentSelector = driver.findElement(By.xpath("//a[@id='shipments']"));
