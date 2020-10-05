@@ -88,7 +88,7 @@ public class CreateShipmentFtl {
 		WebElement inputBoxUser = driver.findElement(By.xpath("//input[@id='username']"));
 		WebElement inputBoxPass = driver.findElement(By.xpath("//input[@id='pswd']"));
 		WebElement buttonSignIn = driver
-				.findElement(By.xpath("//button[@class='btn dxf-btn-red border-radius w-100']"));
+				.findElement(By.xpath("//button[@id='btnLogin']"));
 
 		inputBoxUser.clear();
 		inputBoxUser.sendKeys(user);
@@ -166,7 +166,7 @@ public class CreateShipmentFtl {
 
 		// ==================== Cargo detail ====================
 		WebElement butonRow = driver
-				.findElement(By.xpath("//a[@class='dxf-btn-green dxf-text-bold dxf-text-xsm px-2 py-2 mx-3']"));
+				.findElement(By.xpath("//a[@id='addRowBtn']"));
 		butonRow.click();
 		// Items to ship
 		WebElement handlingUnits = driver.findElement(By.xpath("//input[@id='handling']"));
@@ -220,9 +220,9 @@ public class CreateShipmentFtl {
 		String result = message.getText();  
 		
 		if(!result.isEmpty() && result.equals("Shipment Posted")) {
-			System.out.println("Success test...");
+			System.out.println("RESULT: ======== Success test... ========");
 		}else {
-			System.out.println("The end of the test is not as expected");
+			System.out.println("RESULT: ======== The end of the test is not as expected ========");
 		}
 		
 	}
