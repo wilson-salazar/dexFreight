@@ -50,7 +50,7 @@ public class CreateShipmentFtl {
 		System.setProperty(KEYPATH, PATH);
 		Properties myProperties = new Properties();
 		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
-		time = util.getTime();
+		time = util.getFastTime();
 		
 		// variables de usuario
 		url = myProperties.getProperty("url");

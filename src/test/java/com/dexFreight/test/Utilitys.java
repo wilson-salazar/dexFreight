@@ -16,12 +16,20 @@ public class Utilitys {
 	
 	
 	
-	public long getTime() throws FileNotFoundException, IOException {
+	public long getFastTime() throws FileNotFoundException, IOException {
 		Properties myProperties = new Properties();
-		myProperties.load(new FileInputStream("C:\\Users\\Wilson\\eclipse-workspace\\DexFreight\\src\\test\\java\\properties\\parameters.properties"));
+		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
 		long time;
-		return time = Long.parseLong(myProperties.getProperty("time"));	
+		return time = Long.parseLong(myProperties.getProperty("FastTime"));	
 	}
+        
+        public long getLowTime() throws FileNotFoundException, IOException {
+		Properties myProperties = new Properties();
+		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
+		long time;
+		return time = Long.parseLong(myProperties.getProperty("LowTime"));	
+	}
+        
 	
 	public String getKeypath() {
 		return KEYPATH;
