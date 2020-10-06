@@ -32,7 +32,7 @@ public class SimpleLogin {
 		System.setProperty(KEYPATH, PATH);
 		Properties myProperties = new Properties();
 		myProperties.load(new FileInputStream("src\\test\\java\\properties\\parameters.properties"));
-		time = util.getTime();
+		time = util.getFastTime();
 		
 		url = myProperties.getProperty("url");
 		user = myProperties.getProperty("user");
@@ -50,7 +50,7 @@ public class SimpleLogin {
 		WebElement inputBoxUser = driver.findElement(By.xpath("//input[@id='username']"));
 		//Thread.sleep(2000);
 		WebElement inputBoxPass = driver.findElement(By.xpath("//input[@id='pswd']"));
-		WebElement buttonSignIn = driver.findElement(By.xpath("//button[@class='btn dxf-btn-red border-radius w-100']"));
+		WebElement buttonSignIn = driver.findElement(By.xpath("//button[@id='btnLogin']"));
 		
 		
 		inputBoxUser.clear();
