@@ -199,7 +199,7 @@ public class CreateShipmentFtl {
         WebElement equipmentType = driver.findElement(By.xpath("//div[@id='content-equipment-type']"));
         equipmentType.click();
         Thread.sleep(time);
-        WebElement itemEtype = driver.findElement(By.xpath("//div[contains(text(),'Box Truck')]"));
+        WebElement itemEtype = driver.findElement(By.xpath("//div[contains(text(),'lowboy')]"));
         itemEtype.click();
 
         // ==================== Rate* ====================
@@ -218,13 +218,13 @@ public class CreateShipmentFtl {
         btnPost.click();
         Thread.sleep(LowTime);
 
-        WebElement message = driver.findElement(By.xpath("//div[@id='swal2-content']"));
+        WebElement message = driver.findElement(By.xpath("//h2[@id='swal2-title']"));
         String result = message.getText();
 
         if (!result.isEmpty() && result.equals("Shipment Posted")) {
-            System.out.println("RESULT: ======== Success test... ========");
+            System.err.println("RESULT: ======== Success test... ========");
         } else {
-            System.out.println("RESULT: ======== The end of the test is not as expected ========");
+            System.err.println("RESULT: ======== The end of the test is not as expected ========");
         }
 
     }
