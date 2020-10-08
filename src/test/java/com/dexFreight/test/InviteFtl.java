@@ -27,7 +27,7 @@ public class InviteFtl {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private Utilitys util = new Utilitys();
+    private Utilities util = new Utilities();
     private String KEYPATH = util.getKeypath();
     private String PATH = util.getPath();
     private String url;
@@ -38,7 +38,8 @@ public class InviteFtl {
     private String password;
     
     private String shipment;
-    
+    private String email;
+    private String bidInivte;
 
     @Before
     public void setUp() throws FileNotFoundException, IOException, InterruptedException {
@@ -55,7 +56,9 @@ public class InviteFtl {
         password = myProperties.getProperty("password");
 
         // variables de vista
-        shipment = myProperties.getProperty("shipment");
+        shipment = myProperties.getProperty("shipmentInvite");
+        email = myProperties.getProperty("emailCarrierInvite");
+        bidInivte = myProperties.getProperty("bidInvite");
         
         //Start ChromeDriver
         driver = new ChromeDriver();
@@ -92,9 +95,27 @@ public class InviteFtl {
         selectedOpt.click();
         Thread.sleep(time);
         
-        //WebElement selectedOpt = driver.findElement(By.linkText("Invite a carrier"));
+        WebElement emailCarrier = driver.findElement(By.xpath("//input[@id='emailInvite']"));
+        emailCarrier.sendKeys(email);
         
+        if(bidInivte.equalsIgnoreCase("yes")){
+            WebElement rateValueElement = driver.findElement(By.xpath("//p[@id='rateOpen']"));
+            WebElement rateInputElement = driver.findElement(By.xpath("//input[@id='rateInvite']"));
+            System.out.println("Valor >>>>>>>>>>>>>>> " + rateValueElement.getText());
+            rateInputElement.sendKeys(rateValueElement.getText());
+        }
         
+        WebElement buttonElement = driver.findElement(By.xpath("//button[@id='sendInviteBtn']"));
+        buttonElement.click();
+        Thread.sleep(lowTime);
+        
+        WebElement messageElement = driver.findElement(By.xpath("//h2[@id='swal2-title']"));
+        
+        if(messageElement.getText().equalsIgnoreCase("Success")){
+            System.out.println(util.getSUCCESSTEST());
+        }else{
+            System.err.println(util.getERRORTEST());
+        }
         
     }
 

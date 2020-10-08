@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CreateShipmentFtl {
 
     private WebDriver driver;
-    private Utilitys util = new Utilitys();
+    private Utilities util = new Utilities();
 
     private String KEYPATH = util.getKeypath();
     private String PATH = util.getPath();
@@ -222,9 +222,9 @@ public class CreateShipmentFtl {
         String result = message.getText();
 
         if (!result.isEmpty() && result.equals("Shipment Posted")) {
-            System.err.println("RESULT: ======== Success test... ========");
+            System.out.println(util.getSUCCESSTEST());
         } else {
-            System.err.println("RESULT: ======== The end of the test is not as expected ========");
+            System.err.println(util.getERRORTEST());
         }
 
     }

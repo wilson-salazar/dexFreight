@@ -5,12 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Utilitys {
+public class Utilities {
 
 	private final String KEYPATH = "webdriver.chrome.driver";
 	private final String PATH = "./src/test/resources/chromedriver85.0/chromedriver.exe";
-	
-	public Utilitys() {
+	private final String SUCCESSTEST = "RESULT: ======== Success test... ========";
+        private final String ERRORTEST = "ESULT: ======== The end of the test is not as expected ========";
+        
+	public Utilities() {
 		
 	}
 	
@@ -37,5 +39,13 @@ public class Utilitys {
 	public String getPath() {
 		return PATH;
 	}
+
+    public String getSUCCESSTEST() {
+        return SUCCESSTEST;
+    }
+
+    public String getERRORTEST() {
+        return ERRORTEST;
+    }
 	
 }

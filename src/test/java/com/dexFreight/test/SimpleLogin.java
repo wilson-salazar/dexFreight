@@ -18,7 +18,7 @@ public class SimpleLogin {
 
 	
     private WebDriver driver;
-    private Utilitys util = new Utilitys();
+    private Utilities util = new Utilities();
 	
 	private String KEYPATH = util.getKeypath();
 	private String PATH = util.getPath();
