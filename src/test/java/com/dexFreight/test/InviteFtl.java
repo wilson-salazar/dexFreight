@@ -101,7 +101,6 @@ public class InviteFtl {
         if(bidInivte.equalsIgnoreCase("yes")){
             WebElement rateValueElement = driver.findElement(By.xpath("//p[@id='rateOpen']"));
             WebElement rateInputElement = driver.findElement(By.xpath("//input[@id='rateInvite']"));
-            System.out.println("Valor >>>>>>>>>>>>>>> " + rateValueElement.getText());
             rateInputElement.sendKeys(rateValueElement.getText());
         }
         
