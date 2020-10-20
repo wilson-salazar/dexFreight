@@ -71,7 +71,6 @@ public class InviteFtl {
     @Test
     public void test() throws InterruptedException {
         
-        wait = new WebDriverWait(driver, time);
         // Login
         WebElement inputBoxUser = driver.findElement(By.xpath("//input[@id='username']"));
         WebElement inputBoxPass = driver.findElement(By.xpath("//input[@id='pswd']"));
