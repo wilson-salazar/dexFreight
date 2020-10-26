@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.dexFreight.test.InviteFtl
+Test set: com.dexFreight.test.CreateShipmentDray
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.616 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.751 sec

@@ -45,6 +45,8 @@ public class CreateShipmentFtl {
     private String prate;
     private String maxrate;
     private String accesorials;
+    private String paymentMethod;
+    private String equipmentType;
 
     @Before
     public void setUp() throws InterruptedException, FileNotFoundException, IOException {
@@ -76,6 +78,8 @@ public class CreateShipmentFtl {
         prate = myProperties.getProperty("rate");
         maxrate = myProperties.getProperty("maxrate");
         accesorials = myProperties.getProperty("accesorials");
+        paymentMethod = myProperties.getProperty("paymentMethod");
+        equipmentType = myProperties.getProperty("equipmentType");
 
         driver = new ChromeDriver();
         driver.manage().window().maximize(); // maximizar pantalla del navegador
@@ -196,10 +200,10 @@ public class CreateShipmentFtl {
         btnAddDetail.click();
 
         // ==================== Pyment seccion ====================
-        WebElement equipmentType = driver.findElement(By.xpath("//div[@id='content-equipment-type']"));
-        equipmentType.click();
+        WebElement equipmentTypeElement = driver.findElement(By.xpath("//div[@id='content-equipment-type']"));
+        equipmentTypeElement.click();
         Thread.sleep(time);
-        WebElement itemEtype = driver.findElement(By.xpath("//div[contains(text(),'lowboy')]"));
+        WebElement itemEtype = driver.findElement(By.xpath("//div[contains(text(),'"+equipmentType+"')]"));
         itemEtype.click();
 
         // ==================== Rate* ====================
@@ -213,6 +217,11 @@ public class CreateShipmentFtl {
             WebElement max = driver.findElement(By.xpath("//input[@id='limit']"));
             max.sendKeys(maxrate);
         }
+        
+        //Payment method
+        Select paymentMethodSelect = new Select(driver.findElement(By.xpath("//select[@id='paymentMethod']")));
+        Thread.sleep(time);
+        paymentMethodSelect.selectByVisibleText(paymentMethod);
 
         WebElement btnPost = driver.findElement(By.xpath("//button[@id='post']"));
         btnPost.click();
